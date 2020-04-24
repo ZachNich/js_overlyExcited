@@ -6,7 +6,7 @@ let sentence = ["The","walrus","danced","through","the","trees","in","the","ligh
     the array as the sole argument. It should iterate over the array
     and output the words to the browser console.
 */
-function addExcitement (theWordArray, punctuation) {
+function addExcitement (theWordArray, punctuation = '', repeatNumber = 1) {
 
     // Each time the for loop executes, you're going to add one more word to this string
     let buildMeUp = "";
@@ -14,7 +14,7 @@ function addExcitement (theWordArray, punctuation) {
     for (let i = 0; i < theWordArray.length; i++) {
         // Concatenate the new word onto buildMeUp
         if (i % 3 == 2) {
-           buildMeUp = buildMeUp + ' ' + theWordArray[i] + punctuation;
+           buildMeUp = buildMeUp + ' ' + theWordArray[i] + punctuation.repeat(repeatNumber);
         } else {
             buildMeUp = buildMeUp + ' ' + theWordArray[i];
         };
@@ -28,3 +28,5 @@ function addExcitement (theWordArray, punctuation) {
 addExcitement(sentence);
 // I want to use a question mark
 addExcitement(sentence, "?")
+// Multiple punctuations
+addExcitement(sentence, '&', 5)
